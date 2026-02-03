@@ -3,110 +3,268 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zahidul Islam | Portfolio</title>
-  <meta name="description" content="Personal portfolio of Zahidul Islam" />
+  <title>Zahidul Islam | Professional Portfolio</title>
+  <meta name="description" content="Professional portfolio of Zahidul Islam – Operations Officer & Energy Professional" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --bg: #0b0f1a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #38bdf8;
+      --accent-dark: #0284c7;
+    }
+
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at top, #0f172a, var(--bg));
+      color: var(--text);
+      line-height: 1.7;
     }
-    header {
-      padding: 80px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #2563eb, #1e40af);
-    }
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-    h2 {
-      color: #60a5fa;
-      margin-bottom: 20px;
-    }
-    .card {
-      background: #020617;
-      padding: 25px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-    ul {
-      padding-left: 20px;
-    }
+
     a {
-      color: #93c5fd;
+      color: var(--accent);
       text-decoration: none;
     }
+
     a:hover {
-      text-decoration: underline;
+      color: var(--accent-dark);
     }
+
+    /* Layout */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    /* Hero */
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .hero span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.15rem;
+      color: var(--muted);
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #020617;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      color: white;
+    }
+
+    .btn-outline {
+      border-color: #334155;
+      color: var(--text);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    /* Cards */
+    .card {
+      background: linear-gradient(180deg, #020617, var(--card));
+      border: 1px solid #1f2933;
+      border-radius: 18px;
+      padding: 28px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      gap: 25px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+    /* Skills */
+    .skill {
+      font-weight: 500;
+      color: #cbd5f5;
+    }
+
+    /* Experience */
+    .exp-role {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .exp-org {
+      color: var(--accent);
+    }
+
+    .exp-time {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    /* Contact */
+    .contact-box p {
+      margin: 8px 0;
+    }
+
     footer {
+      border-top: 1px solid #1f2933;
       text-align: center;
       padding: 30px 20px;
-      background: #020617;
+      color: var(--muted);
       font-size: 0.9rem;
-      opacity: 0.8;
     }
   </style>
 </head>
 <body>
 
+  <!-- HERO -->
   <header>
-    <h1>Zahidul Islam</h1>
-    <p>Operations Officer | Drilling & Energy Professional</p>
+    <div class="hero">
+      <h1>Zahidul <span>Islam</span></h1>
+      <p>
+        Operations Officer with hands-on experience in drilling and energy operations, 
+        daily reporting, and cross-functional coordination. Focused on efficiency, safety, 
+        and modern operational practices.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Contact Me</a>
+        <a href="#experience" class="btn btn-outline">View Experience</a>
+      </div>
+    </div>
   </header>
 
-  <section>
-    <h2>About Me</h2>
+  <!-- ABOUT -->
+  <section class="container" id="about">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-subtitle">
+      A concise professional overview
+    </p>
     <div class="card">
       <p>
-        I am an Operations Officer working in drilling and energy operations. 
-        I have hands-on experience in well operations, reporting, and coordination, 
-        with a strong interest in technology and process improvement.
+        I am currently working as an Operations Officer in Bangladesh, supporting drilling and well operations 
+        for large-scale energy projects. My role involves operational coordination, technical documentation, 
+        and ensuring smooth execution of field activities. I am passionate about technology-driven efficiency 
+        and continuous professional growth.
       </p>
     </div>
+  </section>
 
-    <h2>Skills</h2>
-    <div class="card">
-      <ul>
-        <li>Drilling Operations & Reporting</li>
-        <li>Well Testing & Wireline Basics</li>
-        <li>Operations Coordination</li>
-        <li>Technical Documentation</li>
-      </ul>
+  <!-- SKILLS -->
+  <section class="container" id="skills">
+    <h2 class="section-title">Core Skills</h2>
+    <p class="section-subtitle">
+      Technical and operational strengths
+    </p>
+    <div class="grid grid-3">
+      <div class="card skill">Drilling Operations & Daily Reporting</div>
+      <div class="card skill">Well Testing & Wireline Basics</div>
+      <div class="card skill">Operations Coordination</div>
+      <div class="card skill">Technical Documentation</div>
+      <div class="card skill">HSE Awareness & Compliance</div>
+      <div class="card skill">Data Interpretation & Analysis</div>
     </div>
+  </section>
 
-    <h2>Experience</h2>
-    <div class="card">
-      <strong>Operations Officer</strong><br />
-      CNPC CCDC Bangladesh<br />
-      <em>2023 – Present</em>
-      <p>
-        Supporting drilling and well operations, daily reporting, and inter-department coordination.
-      </p>
+  <!-- EXPERIENCE -->
+  <section class="container" id="experience">
+    <h2 class="section-title">Professional Experience</h2>
+    <p class="section-subtitle">
+      Roles and responsibilities
+    </p>
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="exp-role">Operations Officer</div>
+        <div class="exp-org">CNPC Chuanqing Drilling Engineering Company Ltd. (CCDC)</div>
+        <div class="exp-time">2023 – Present</div>
+        <ul>
+          <li>Support drilling and well operations activities</li>
+          <li>Prepare and review daily operational reports</li>
+          <li>Coordinate between field teams and office departments</li>
+          <li>Assist in ensuring operational efficiency and safety compliance</li>
+        </ul>
+      </div>
     </div>
+  </section>
 
-    <h2>Contact</h2>
-    <div class="card">
-      <p>Email: <a href="mailto:yourname@email.com">yourname@email.com</a></p>
-      <p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
+  <!-- CONTACT -->
+  <section class="container" id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-subtitle">
+      Let’s connect professionally
+    </p>
+    <div class="card contact-box">
+      <p><strong>Email:</strong> <a href="mailto:yourname@email.com">yourname@email.com</a></p>
+      <p><strong>LinkedIn:</strong> <a href="#">linkedin.com/in/yourprofile</a></p>
+      <p><strong>Location:</strong> Bangladesh</p>
     </div>
   </section>
 
   <footer>
-    © 2026 Zahidul Islam · All rights reserved
+    © 2026 Zahidul Islam · Professional Portfolio
   </footer>
 
 </body>
